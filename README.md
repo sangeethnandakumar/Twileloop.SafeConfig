@@ -1,5 +1,8 @@
-# Step 1: Register your options in appsettings.json
-```
+# Configuration Validation In ASP.NET Core API
+The following template allows validating configuration using custom FluentValidator and enforce a fail early policy
+
+## Step 1: Register your options in appsettings.json
+```json
 {
   "Logging": {
     "LogLevel": {
@@ -17,8 +20,8 @@
 
 ```
 
-# Step 2: Create a model for binding it
-```
+## Step 2: Create a model for binding it
+```csharp
     public enum ServerType
     {
         GOOGLE,
@@ -33,8 +36,8 @@
     }
 ```
 
-# Step 3: In Program.cs, Configure IOptions
-```
+## Step 3: In Program.cs, Configure IOptions
+```csharp
             //Step 1: Configure option
             builder.Services
                 .AddOptions<SMTPOptions>()
@@ -43,14 +46,14 @@
                 .ValidateOnStart();
 ```
 
-# Step 4: Register all validators
-```
+## Step 4: Register all validators
+```csharp
             //Step 2: Add validators
             builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Singleton);
 ```
 
-# Step 5: To use 'ValidateFluently()', Build the extension
-```
+## Step 5: To use 'ValidateFluently()', Build the extension
+```csharp
     public static class OptionsBuilderFluentValidationExtensions
     {
         public static OptionsBuilder<T> ValidateFluently<T>(this OptionsBuilder<T> optionsBuilder) where T : class
@@ -65,8 +68,8 @@
     }
 ```
 
-# Step 6: Write validation provider
-```
+## Step 6: Write validation provider
+```csharp
 public class FluentValidationOptions<T> : IValidateOptions<T> where T : class
 {
     public string Name { get; }
@@ -109,8 +112,8 @@ public class FluentValidationOptions<T> : IValidateOptions<T> where T : class
 }
 ```
 
-# Step 7: Write validators
-```
+## Step 7: Write validators
+```csharp
  public class OptionsValidator : AbstractValidator<SMTPOptions>
  {
      public OptionsValidator()

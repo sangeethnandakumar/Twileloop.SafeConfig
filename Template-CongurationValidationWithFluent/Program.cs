@@ -1,4 +1,7 @@
 
+using FluentValidation;
+using Template_CongurationValidationWithFluent.Validators;
+
 namespace Template_CongurationValidationWithFluent
 {
     public class Program
@@ -6,17 +9,22 @@ namespace Template_CongurationValidationWithFluent
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //Step 1: Configure option
+            builder.Services
+                .AddOptions<SMTPOptions>()
+                .Bind(builder.Configuration.GetSection(nameof(SMTPOptions)))
+                .ValidateFluently()
+                .ValidateOnStart();
+
+            //Step 2: Add validators
+            builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Singleton);
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -24,12 +32,8 @@ namespace Template_CongurationValidationWithFluent
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
-
             app.Run();
         }
     }

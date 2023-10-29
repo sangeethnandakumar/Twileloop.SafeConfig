@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Template_CongurationValidationWithFluent.Validators
+namespace Twileloop.SafeConfig.Validators
 {
     public class OptionsValidator : AbstractValidator<SMTPOptions>
     {

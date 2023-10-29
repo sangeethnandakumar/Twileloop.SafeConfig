@@ -1,4 +1,4 @@
-namespace Template_CongurationValidationWithFluent
+namespace Twileloop.SafeConfig
 {
     public class WeatherForecast
     {

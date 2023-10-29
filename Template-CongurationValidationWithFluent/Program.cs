@@ -1,10 +1,10 @@
 
 using FluentValidation;
 using Microsoft.Extensions.Options;
-using Template_CongurationValidationWithFluent.Validators;
+using Twileloop.SafeConfig.Validators;
 using Twileloop.SafeConfig;
 
-namespace Template_CongurationValidationWithFluent
+namespace Twileloop.SafeConfig
 {
     public class Program
     {

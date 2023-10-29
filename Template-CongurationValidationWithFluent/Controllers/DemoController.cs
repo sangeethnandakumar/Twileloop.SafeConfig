@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Template_CongurationValidationWithFluent.Validators;
+using Twileloop.SafeConfig.Validators;
 
-namespace Template_CongurationValidationWithFluent.Controllers
+namespace Twileloop.SafeConfig.Controllers
 {
     [ApiController]
     public class DemoController : ControllerBase

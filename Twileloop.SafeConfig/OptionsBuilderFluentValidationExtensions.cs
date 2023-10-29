@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace Template_CongurationValidationWithFluent.Validators
+namespace Twileloop.SafeConfig
 {
     public static class OptionsBuilderFluentValidationExtensions
     {

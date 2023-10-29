@@ -1,6 +1,8 @@
 
 using FluentValidation;
+using Microsoft.Extensions.Options;
 using Template_CongurationValidationWithFluent.Validators;
+using Twileloop.SafeConfig;
 
 namespace Template_CongurationValidationWithFluent
 {
@@ -13,9 +15,10 @@ namespace Template_CongurationValidationWithFluent
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            //Step 1: Configure option
+            var config = builder.Configuration.GetSection(nameof(SMTPOptions)).Get<SMTPOptions>();
+
             builder.Services
-                .AddOptions<SMTPOptions>()
+                .AddOptionsWithValidateOnStart<SMTPOptions>()
                 .Bind(builder.Configuration.GetSection(nameof(SMTPOptions)))
                 .ValidateFluently()
                 .ValidateOnStart();

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34004.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template-CongurationValidationWithFluent", "Template-CongurationValidationWithFluent\Template-CongurationValidationWithFluent.csproj", "{A89DACBA-2F65-4D7C-9F13-E24E229FD8FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template-CongurationValidationWithFluent", "Template-CongurationValidationWithFluent\Template-CongurationValidationWithFluent.csproj", "{A89DACBA-2F65-4D7C-9F13-E24E229FD8FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twileloop.SafeConfig", "Twileloop.SafeConfig\Twileloop.SafeConfig.csproj", "{CCE0B14C-44C5-4622-976E-D8A4D12BD38C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A89DACBA-2F65-4D7C-9F13-E24E229FD8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89DACBA-2F65-4D7C-9F13-E24E229FD8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89DACBA-2F65-4D7C-9F13-E24E229FD8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE0B14C-44C5-4622-976E-D8A4D12BD38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE0B14C-44C5-4622-976E-D8A4D12BD38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE0B14C-44C5-4622-976E-D8A4D12BD38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE0B14C-44C5-4622-976E-D8A4D12BD38C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

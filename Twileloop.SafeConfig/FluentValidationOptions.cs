@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System.Text;
 
-namespace Template_CongurationValidationWithFluent.Validators
+namespace Twileloop.SafeConfig
 {
     public class FluentValidationOptions<T> : IValidateOptions<T> where T : class
     {
@@ -27,21 +28,19 @@ namespace Template_CongurationValidationWithFluent.Validators
 
             ArgumentNullException.ThrowIfNull(options, nameof(options));
 
-            var validationResult = validator.Validate(options);
-            if(validationResult.IsValid)
+            var validate = validator.Validate(options);
+            if(validate.IsValid)
             {
                 return ValidateOptionsResult.Success;
             }
 
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append($"Validation of '{typeof(T).Name}' failed. Please revalidate configuration files in '{_env.EnvironmentName}' environment.");
-            stringBuilder.Append($"\n\nDETECTED ERRORS\n=============");
-            validationResult.Errors.ForEach(error =>
+            var errors = new List<string>();
+            validate.Errors.ForEach(error =>
             {
-                stringBuilder.Append($"\n{error.PropertyName} - {error.ErrorMessage}");
+                errors.Add($"{error.PropertyName} - {error.ErrorMessage}");
             });
 
-            return ValidateOptionsResult.Fail(stringBuilder.ToString());
+            return ValidateOptionsResult.Fail(errors);
         }
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Template_CongurationValidationWithFluent.Validators;
 
 namespace Template_CongurationValidationWithFluent.Controllers
 {

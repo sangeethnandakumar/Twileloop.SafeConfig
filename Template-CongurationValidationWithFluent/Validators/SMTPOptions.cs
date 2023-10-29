@@ -1,4 +1,4 @@
-﻿namespace Template_CongurationValidationWithFluent
+﻿namespace Template_CongurationValidationWithFluent.Validators
 {
     public enum ServerType
     {

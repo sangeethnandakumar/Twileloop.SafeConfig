@@ -4,29 +4,32 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Title>Twileloop.SafeConfig</Title>
-		<Authors>Twileloop, Sangeeth Nandakumar</Authors>
-		<PackageProjectUrl>https://github.com/sangeethnandakumar/Twileloop.SafeConfig</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/sangeethnandakumar/Twileloop.SafeConfig</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageTags>config, options, validation, startup validation</PackageTags>
-		<Description>
-			A simple library that helps to wire up your options validation setup, Allowing you to only define your config model and fluent validations.
-		</Description>
-		<PackageIcon>logo.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
+
+	<PropertyGroup>
+		<Title>Twileloop.SafeConfig</Title>
+		<Product>Twileloop.SafeConfig</Product>
+		<Authors>Twileloop, Sangeeth Nandakumar</Authors>
+		<Company>Twileloop</Company>
+		<Copyright>Twileloop</Copyright>
+		<Description>A simple library that helps to wire up your options validation setup, Allowing you to only define your config model and fluent validations</Description>
+		<PackageProjectUrl>https://packages.twileloop.com/twileloop.safeconfig</PackageProjectUrl>
+		<PackageIcon>logo.png</PackageIcon>
+		<RepositoryUrl>https://github.com/sangeethnandakumar/Twileloop.safeconfig</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>options, fluent, validation, configuration, startup validation</PackageTags>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+	</PropertyGroup>
+
+
 	<ItemGroup>
-		<None Include="..\README.md">
+		<None Include="..\Readme.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
-
-		<None Include="..\logo.png">
-			<Pack>True</Pack>
+		<None Update="logo.png">
+			<Pack>true</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
